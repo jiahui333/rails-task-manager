@@ -1,0 +1,9 @@
+<h1>Tasks</h1>
+<i class="far fa-trash-alt"></i>
+
+<% @tasks.each do |task| %>
+  <div class="task">
+  <p><%= link_to task.title, task_path(task) %></p>
+  <p> <%= link_to "Delete #{task.title}", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %> <p>
+  </div>
+<% end %>
